@@ -1,8 +1,10 @@
 const express = require ('express');
+const bodyParser = require('body-parser');
 const router = express.Router();
 
 var app = express();
-
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}))
 app.use(router);
 
 router.get('/message', function(req, res){
@@ -10,6 +12,8 @@ router.get('/message', function(req, res){
 });
 
 router.post('/message', function(req, res){
+    console.log(reg.query);
+    console.log(req.body);
     res.send ('mensaje añadido');
 });
 
