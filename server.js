@@ -5,12 +5,12 @@ var app = express();
 
 app.use(router);
 
-router.get('/', function(req, res){
-    res.send ('hola desde GET');
+router.get('/message', function(req, res){
+    res.send ('Lista de mensajes');
 });
 
-router.post('/', function(req, res){
-    res.send ('hola desde POST');
+router.post('/message', function(req, res){
+    res.send ('mensaje añadido');
 });
 
 //app.use('/', function (req, res){
